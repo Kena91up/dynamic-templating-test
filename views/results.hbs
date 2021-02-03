@@ -1,1 +1,14 @@
-<h2>Students who passed the exam:</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+</head>
+<body>
+    <h2>Students who passed the exam:</h2>
+     {{#each scoreStudents}}
+     <h4> Students name is {{this.name}} and score is {{this.score}}</h4>
+    {{/each}}
+</body>
+</html>

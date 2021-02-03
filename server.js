@@ -8,7 +8,21 @@ const app = express();
 app.set('view engine', 'hbs');
 app.set('views', __dirname + '/views');
 
+// require some data form your exam-info.js file
+let students = require('./exam-info')
+
 app.use(express.static('public'));
+
+app.get("/", (req, res) => {
+ 
+  res.render( 'full-list.hbs' , {students});
+});
+app.get("/results", (req, res )=> {
+    let scoreStudents = students
+    .filter((students) => students.hasPassed)
+    .sort((a,b) => b.score - a.score)
+       res.render( 'results.hbs',{scoreStudents})
+});
 
 // 1: in the home,list all the students who took the exam (list all the students)
 

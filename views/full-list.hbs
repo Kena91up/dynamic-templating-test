@@ -1,1 +1,14 @@
-<h2>Students who took the exam:</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full-list</title>
+</head>
+<body>
+    <h2>Students who took the exam:</h2>
+    {{#each students}}
+     <h4> {{this.name}} </h4>
+    {{/each}}
+</body>
+</html>
